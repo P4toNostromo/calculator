@@ -1,8 +1,8 @@
 print()
 print()
 print()
-print("CALCULATOR 1.0")
-print()
+print("CALCULATOR 1.1")
+print("Updated Division by Zero Error")
 print()
 while True:
 	print("The following calculator is based on two variables only.")
@@ -41,14 +41,16 @@ while True:
 ********************************************************
 """)
 	elif user_input == "divide":
-                num1 = float(input("Enter first number: "))
-                num2 = float(input("Enter second number: "))
-                res = str(num1/num2)
-                print("The quotient of " + str(num1) + " divided by " + str(num2) + " is " + res + """
+		try:
+			num1 = float(input("Enter first number: "))
+			num2 = float(input("Enter second number: "))
+			res = str(num1/num2)
+			print("The quotient of " + str(num1) + " divided by " + str(num2) + " is " + res + """
 *********************************************************
 """)
+		except ZeroDivisionError:
+			print("Can't divide by 0!")
 	else:
 		print("Unknown input"+"""
 *********
 *********""")
-
